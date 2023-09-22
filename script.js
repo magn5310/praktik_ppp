@@ -14,7 +14,7 @@ function reveal() {
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 20;
+      var elementVisible = 5;
       if (elementTop < windowHeight - elementVisible) {
         reveals[i].classList.add("toright");
        
@@ -29,7 +29,7 @@ function reveal2() {
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 20;
+      var elementVisible = 5;
       if (elementTop < windowHeight - elementVisible) {
         reveals[i].classList.add("toleft");
         
@@ -38,14 +38,14 @@ function reveal2() {
     
   }
   reveal2();
-  reveal();
+
 window.addEventListener("scroll", reveal3);
 function reveal3() {
     let reveals = document.querySelectorAll(".footerani");
     for (var i = 0; i < reveals.length; i++) {
       var windowHeight = window.innerHeight;
       var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 40;
+      var elementVisible = 5;
       if (elementTop < windowHeight - elementVisible) {
         reveals[i].classList.add("totop");
         

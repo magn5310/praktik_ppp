@@ -157,19 +157,19 @@ padding: 0.5rem;
     animation-duration: 3s;
     
 }
+.toleft{
+    animation-name: toleft;
+    animation-duration: 3s;
+    
+}
 @keyframes toright {
     0% {
         transform: translate(-150%,0);
     }
   
     100% {
-   
+   transform: translate(0,0);
     }
-}
-.toleft{
-    animation-name: toleft;
-    animation-duration: 3s;
-    
 }
 @keyframes toleft {
     0% {
@@ -177,7 +177,7 @@ padding: 0.5rem;
     }
   
     100% {
-   
+   transform: translate(0,0);
     }
 }
 .totop{
@@ -236,4 +236,7 @@ padding: 0.5rem;
     .mainsec{
         margin-block: 4rem;
     }
+ 
+
 }
+
