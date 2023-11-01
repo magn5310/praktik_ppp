@@ -248,6 +248,16 @@ body {
   animation-name: aktiv;
   animation-duration: 5s;
 }
+#erfaring {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  gap: 2rem;
+}
+#erfaring > * {
+  margin: auto;
+}
 
 @keyframes aktiv {
   0% {
