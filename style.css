@@ -114,7 +114,7 @@ body {
   margin-left: 0.5rem;
 }
 .secflex1 img {
-  width: 200%;
+  width: 100%;
   object-fit: cover;
   padding: 0.5rem;
 }
@@ -327,9 +327,7 @@ body {
   .mainsec {
     margin-block: 4rem;
   }
-  .secflex1 img {
-    width: 50%;
-  }
+
   .projflex {
     display: flex;
     overflow-x: scroll;
