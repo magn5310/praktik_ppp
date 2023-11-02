@@ -19,6 +19,7 @@ p {
 }
 h2 {
   font-size: 1.5rem;
+  text-transform: uppercase;
 }
 li {
   list-style: none;
@@ -63,7 +64,7 @@ body {
 
 .secdiv {
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
+
   grid-template-columns: repeat(2, 1fr);
 }
 .secdiv section:nth-child(even) {
@@ -80,26 +81,26 @@ body {
 }
 .sec1 {
   background-color: var(--secwhite);
-  height: 15rem;
+
   margin-top: 5rem;
 }
 .sec2 {
   background-color: var(--secblack);
-  height: 15rem;
+
   margin-top: 5rem;
   grid-row: 2;
   padding-inline: 0.5rem;
 }
 .sec3 {
   background-color: var(--secwhite);
-  height: 15rem;
+
   margin-top: 5rem;
   grid-row: 3;
   padding-inline: 0.5rem;
 }
 .sec4 {
   background-color: var(--secblack);
-  height: 15rem;
+
   margin-top: 5rem;
   grid-row: 4;
   padding-inline: 0.5rem;
@@ -300,8 +301,10 @@ body {
   .sec2,
   .sec3,
   .sec4 {
-    height: 25rem;
+    max-height: fit-content;
+    min-height: 25rem;
   }
+
   .secdiv section:nth-child(even) {
     margin-left: 5rem;
     padding: 2rem;
