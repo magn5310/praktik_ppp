@@ -107,9 +107,20 @@ body {
 }
 .secflex1 {
   display: flex;
+  flex-direction: column;
   height: 100%;
   gap: 1rem;
 }
+.secflex1 ul {
+  display: grid;
+  gap: 2rem;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+  text-transform: uppercase;
+  justify-content: center;
+}
+
 .secflex1 h2 {
   margin-left: 0.5rem;
 }
@@ -352,6 +363,9 @@ body {
     height: 35rem;
     object-fit: cover;
     border-radius: 4px;
+  }
+  .secflex1 {
+    flex-direction: row;
   }
   #erfaring {
     grid-template-columns: repeat(5, minmax(0, 1fr));
