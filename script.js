@@ -44,12 +44,24 @@ function reveal3() {
     var elementTop = reveals[i].getBoundingClientRect().top;
     var elementVisible = 5;
     if (elementTop < windowHeight - elementVisible) {
-      reveals[i].classList.add("totop");
+      reveals[i].classList.add("toright");
     }
   }
 }
 reveal3();
-
+window.addEventListener("scroll", reveal4);
+function reveal4() {
+  let reveals = document.querySelectorAll(".secani3");
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 5;
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("totop");
+    }
+  }
+}
+reveal4();
 const cls = document.querySelector(".cls-2");
 const cls3 = document.querySelector(".cls-3");
 const rect = document.querySelectorAll("#rect");
