@@ -308,15 +308,6 @@ a:hover {
     opacity: 100%;
   }
 }
-@keyframes toleft {
-  0% {
-    transform: translate(150%, 0);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
-}
 
 @media (min-width: 850px) {
   p {
@@ -328,6 +319,15 @@ a:hover {
   .sec4 {
     max-height: fit-content;
     min-height: 25rem;
+  }
+  @keyframes toleft {
+    0% {
+      transform: translate(150%, 0);
+    }
+
+    100% {
+      transform: translate(0, 0);
+    }
   }
 
   @keyframes totop {
