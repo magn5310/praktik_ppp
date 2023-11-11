@@ -25,7 +25,7 @@ li {
   list-style: none;
 }
 .logo {
-  width: 100%;
+  width: 180%;
 }
 .logodiv li:nth-child(2) {
   font-size: 1rem;
@@ -393,4 +393,37 @@ body {
       opacity: 0;
     }
   }
+}
+
+.cls-3 {
+  fill: #1c1c1c;
+  stroke-dasharray: 500;
+  animation: dash 2.5s linear;
+}
+.cls-2 {
+  fill: #1c1c1c;
+  stroke-dasharray: 500;
+  animation: dash 15s linear;
+}
+
+@keyframes dash {
+  from {
+    fill: transparent;
+    stroke-dashoffset: 500;
+  }
+  to {
+    fill: transparent;
+    stroke-dashoffset: 0;
+  }
+}
+@keyframes color {
+  from {
+    fill: transparent;
+  }
+  to {
+    fill: #1c1c1c;
+  }
+}
+.fillani {
+  animation: color 1s linear;
 }
