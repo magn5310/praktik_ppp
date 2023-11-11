@@ -59,6 +59,7 @@ nav {
   color: var(--secwhite);
 }
 body {
+  min-height: 100vh;
   background-color: var(--bgcolor);
   overflow-x: hidden;
 }
@@ -283,10 +284,7 @@ a:hover {
     transform: translate(0, 0);
   }
 }
-.totop {
-  animation-name: totop;
-  animation-duration: 1.5s;
-}
+
 @keyframes totop {
   0% {
     transform: translate(-150%, 0);
@@ -295,6 +293,7 @@ a:hover {
   100% {
   }
 }
+
 .aktiv {
   animation-name: aktiv;
   animation-duration: 5s;

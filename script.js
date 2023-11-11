@@ -52,8 +52,8 @@ reveal3();
 
 const cls = document.querySelector(".cls-2");
 const cls3 = document.querySelector(".cls-3");
-const rect = document.querySelectorAll("rect");
-const path = document.querySelectorAll("path");
+const rect = document.querySelectorAll("#rect");
+const path = document.querySelectorAll("#path");
 
 cls.addEventListener("animationend", () => {
   rect.forEach((element) => {
