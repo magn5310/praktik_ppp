@@ -177,6 +177,10 @@ body {
   animation-name: toright;
   animation-duration: 3s;
 }
+.totop {
+  animation-name: totop;
+  animation-duration: 3s;
+}
 .toleft {
   animation-name: toleft;
   animation-duration: 3s;
@@ -275,24 +279,6 @@ a:hover {
     transform: translate(0, 0);
   }
 }
-@keyframes toleft {
-  0% {
-    transform: translate(150%, 0);
-  }
-
-  100% {
-    transform: translate(0, 0);
-  }
-}
-
-@keyframes totop {
-  0% {
-    transform: translate(-150%, 0);
-  }
-
-  100% {
-  }
-}
 
 .aktiv {
   animation-name: aktiv;
@@ -334,7 +320,25 @@ a:hover {
     max-height: fit-content;
     min-height: 25rem;
   }
+  @keyframes toleft {
+    0% {
+      transform: translate(150%, 0);
+    }
 
+    100% {
+      transform: translate(0, 0);
+    }
+  }
+
+  @keyframes totop {
+    0% {
+      transform: translate(-150%, 0);
+    }
+
+    100% {
+      transform: translate(0, 0);
+    }
+  }
   .secdiv section:nth-child(even) {
     margin-left: 5rem;
     padding: 2rem;
