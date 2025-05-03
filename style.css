@@ -219,7 +219,13 @@ a:hover {
 .mainsec a:hover {
   color: #e5e5e5c2;
 }
+main .mainsec:nth-child(odd) {
+  border-radius: 0 0.3rem 0.3rem 0;
+}
 
+main .mainsec:nth-child(even) {
+  border-radius: 0.3rem 0 0 0.3rem ;
+}
 .projflex div img:hover {
   filter: grayscale(0);
 }
@@ -298,6 +304,7 @@ a:hover {
 .mainsec a {
   color: var(--bgcolor);
 }
+
 
 @keyframes aktiv {
   0% {
