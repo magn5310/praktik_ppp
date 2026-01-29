@@ -11,13 +11,14 @@ interface Particle {
 
 function getParticleCount() {
   const width = window.innerWidth
-  if (width < 640) return 30
-  if (width < 1024) return 50
-  return 100
+  if (width < 640) return 15
+  if (width < 1024) return 25
+  return 50
 }
+
+
+
 const CONNECTION_DISTANCE = 140
-const MOUSE_RADIUS = 180
-const MOUSE_REPEL_STRENGTH = 0.04
 const BASE_SPEED = 0.3
 const PARTICLE_COLOR = "201, 162, 39" 
 
@@ -61,7 +62,6 @@ export function ParticleConstellation() {
       if (!canvas || !ctx) return
       const w = canvas.offsetWidth
       const h = canvas.offsetHeight
-      const mouse = mouseRef.current
       const particles = particlesRef.current
 
       ctx.clearRect(0, 0, w, h)
@@ -69,16 +69,6 @@ export function ParticleConstellation() {
     
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i]
-
-
-        const dx = p.x - mouse.x
-        const dy = p.y - mouse.y
-        const dist = Math.sqrt(dx * dx + dy * dy)
-        if (dist < MOUSE_RADIUS && dist > 0) {
-          const force = (MOUSE_RADIUS - dist) / MOUSE_RADIUS
-          p.vx += (dx / dist) * force * MOUSE_REPEL_STRENGTH
-          p.vy += (dy / dist) * force * MOUSE_REPEL_STRENGTH
-        }
 
 
         p.vx *= 0.99
@@ -89,6 +79,11 @@ export function ParticleConstellation() {
         if (speed > BASE_SPEED * 3) {
           p.vx = (p.vx / speed) * BASE_SPEED * 3
           p.vy = (p.vy / speed) * BASE_SPEED * 3
+        }
+        if (speed < BASE_SPEED * 0.5) {
+          const angle = Math.atan2(p.vy, p.vx)
+          p.vx = Math.cos(angle) * BASE_SPEED * 0.05
+          p.vy = Math.sin(angle) * BASE_SPEED * 0.05
         }
 
         p.x += p.vx
@@ -124,15 +119,7 @@ export function ParticleConstellation() {
           }
         }
 
-        if (dist < MOUSE_RADIUS) {
-          const lineOpacity = (1 - dist / MOUSE_RADIUS) * 0.3
-          ctx.beginPath()
-          ctx.moveTo(p.x, p.y)
-          ctx.lineTo(mouse.x, mouse.y)
-          ctx.strokeStyle = `rgba(${PARTICLE_COLOR}, ${lineOpacity})`
-          ctx.lineWidth = 0.6
-          ctx.stroke()
-        }
+        
       }
 
       animationRef.current = requestAnimationFrame(animate)
@@ -155,16 +142,16 @@ export function ParticleConstellation() {
     createParticles()
     animate()
 
-    window.addEventListener("resize", () => {
+    const resizeHandler = () => {
       resize()
       createParticles()
-    })
-    canvas.addEventListener("mousemove", handleMouseMove)
-    canvas.addEventListener("mouseleave", handleMouseLeave)
+    }
+    window.addEventListener("resize", resizeHandler)
+
 
     return () => {
       cancelAnimationFrame(animationRef.current)
-      window.removeEventListener("resize", resize)
+      window.removeEventListener("resize", resizeHandler)
       canvas.removeEventListener("mousemove", handleMouseMove)
       canvas.removeEventListener("mouseleave", handleMouseLeave)
     }
@@ -173,7 +160,7 @@ export function ParticleConstellation() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-auto"
+      className="absolute inset-0 w-full h-full pointer-events-none sm:pointer-events-auto"
       style={{ zIndex: 0 }}
     />
   )
