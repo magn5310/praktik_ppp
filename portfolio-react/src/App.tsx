@@ -64,20 +64,29 @@ function App() {
           title="Hvad har jeg lavet?"
         >
           <p>
-            Hos ZeroNorth arbejdede jeg som frontend-udvikler i React, hvor jeg
-            blandt andet erstattede styled components med Tailwind CSS og byggede
-            moduler til dataeksport. Samarbejdet i et professionelt udviklerteam
-            gav mig værdifuld erfaring med CI, tests og design meetings.
+            I min 10 ugers praktik hos ZeroNorth arbejdede jeg som
+            frontend-udvikler i React, hvor jeg blandt andet erstattede styled
+            components med Tailwind CSS og byggede et modul til eksport af data
+            til Excel. Det vigtigste udbytte var erfaringen med at indgå i et
+            professionelt udviklerteam — fra daglig kommunikation og samarbejde
+            til gode practices omkring CI, tests og design meetings.
           </p>
           <p>
-            Hos Accelerace arbejdede jeg i over et år med fullstack-udvikling i
-            Laravel, Vue og MySQL. Her løste jeg alt fra bugs og mindre features
-            til opgaver med databasekald og databehandling, og jeg skrev tests
+            Hos Accelerace arbejdede jeg i over et år som fullstack-udvikler i
+            Laravel, Vue og MySQL. Via et fælles Jira board løste jeg opgaver i
+            alle afskygninger — fra bugs og mindre features til databasekald og
+            databehandling. Da jeg startede, havde jeg primært
+            frontend-erfaring, men gennem dette år lærte jeg hvordan backend
+            kommunikerer med både database og frontend. Jeg skrev desuden tests
             for at sikre systemets stabilitet.
           </p>
           <p>
-            På min bachelor har jeg desuden arbejdet med Flask, Python, cybersecurity
-            og udviklingsmiljøer med fokus på kodekvalitet og automatisering.
+            På min bachelor fra KEA har jeg blandt andet arbejdet med responsive
+            webapplikationer i React og Next.js, dataudveksling mellem frontend
+            og backend med autentifikation og validering, relationelle
+            SQL-databaser og dokumentbaserede NoSQL-databaser, versionsstyring
+            med Git og grundlæggende CI/CD samt sikring af webapplikationer med
+            fokus på OWASP Top 10 og cybersecurity.
           </p>
         </TextBlock>
 
