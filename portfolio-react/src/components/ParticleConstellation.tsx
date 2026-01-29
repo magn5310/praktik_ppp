@@ -87,8 +87,8 @@ export function ParticleConstellation() {
         }
         if (speed < BASE_SPEED * 0.5) {
           const angle = Math.atan2(p.vy, p.vx)
-          p.vx = Math.cos(angle) * BASE_SPEED * 0.05
-          p.vy = Math.sin(angle) * BASE_SPEED * 0.05
+          p.vx = Math.cos(angle) * BASE_SPEED * 0.07
+          p.vy = Math.sin(angle) * BASE_SPEED * 0.07
         }
 
         p.x += p.vx
@@ -165,7 +165,7 @@ export function ParticleConstellation() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none sm:pointer-events-auto"
+      className="fixed inset-0 w-full h-full pointer-events-none sm:pointer-events-auto"
       style={{ zIndex: 0 }}
     />
   )
