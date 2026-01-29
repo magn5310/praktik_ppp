@@ -1,15 +1,16 @@
 import { motion } from "framer-motion"
+import { ParticleConstellation } from "./ParticleConstellation"
+import { TextScramble } from "./TextScramble"
 
 export function Hero() {
   return (
     <section className="min-h-screen flex flex-col justify-center relative overflow-hidden">
-     
+      <ParticleConstellation />
 
-      {/* Gradient orb */}
       <div className="absolute top-1/4 -right-32 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 -left-32 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
 
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
+      <div className="container mx-auto px-6 md:px-12 relative z-10 pointer-events-none">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -17,7 +18,7 @@ export function Hero() {
           className="mb-8"
         >
           <span className="text-accent text-sm md:text-base tracking-[0.3em] uppercase font-medium">
-            Webudvikler
+            <TextScramble text="Webudvikler" delay={200} duration={800} />
           </span>
         </motion.div>
 
@@ -27,13 +28,13 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <span className="block">Magnus</span>
-          <span className="block text-gradient">Robert</span>
-          <span className="block">Madsen</span>
+          <TextScramble text="Magnus" delay={400} duration={1000} className="block" />
+          <TextScramble text="Robert" delay={600} duration={1000} className="block text-gradient" />
+          <TextScramble text="Madsen" delay={800} duration={1000} className="block" />
         </motion.h1>
 
         <motion.div
-          className="mt-12 flex flex-col sm:flex-row gap-6 items-start"
+          className="mt-12 flex flex-col sm:flex-row gap-6 items-start pointer-events-auto"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
@@ -51,8 +52,6 @@ export function Hero() {
             Se projekter
           </a>
         </motion.div>
-
-       
       </div>
     </section>
   )

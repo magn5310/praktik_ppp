@@ -81,14 +81,14 @@ export function ProjectsSection() {
               className="group block"
             >
               <div className="relative overflow-hidden bg-card border border-border hover:border-accent/50 transition-all duration-500">
-                {/* Image */}
+      
                 <div className="relative aspect-video overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                   />
-                  {/* Overlay */}
+
                   <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                     <span className="flex items-center gap-2 text-foreground font-medium">
                       Se projekt <ArrowUpRight className="w-4 h-4" />
@@ -96,13 +96,12 @@ export function ProjectsSection() {
                   </div>
                 </div>
 
-                {/* Content */}
                 <div className="p-6">
                   <div className="flex items-start justify-between gap-4 mb-3">
                     <h3 className="text-xl font-bold group-hover:text-accent transition-colors">
                       {project.title}
                     </h3>
-                    <ArrowUpRight className="w-5 h-5 text-muted group-hover:text-accent transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 flex-shrink-0" />
+                    <ArrowUpRight className="w-5 h-5 text-muted group-hover:text-accent transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0" />
                   </div>
                   <p className="text-muted text-sm mb-4">
                     {project.description}

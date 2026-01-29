@@ -51,7 +51,6 @@ export function IntroSection({ imageSrc, imageAlt }: IntroSectionProps) {
     <section ref={ref} className="py-24 md:py-32 border-t border-border">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
-          {/* Image */}
           <motion.div
             className="relative order-2 lg:order-1 pb-4 pr-4"
             initial={{ opacity: 0, x: -40 }}
@@ -69,7 +68,6 @@ export function IntroSection({ imageSrc, imageAlt }: IntroSectionProps) {
             </div>
           </motion.div>
 
-          {/* Content */}
           <motion.div
             className="order-1 lg:order-2"
             initial={{ opacity: 0, x: 40 }}
@@ -94,7 +92,6 @@ export function IntroSection({ imageSrc, imageAlt }: IntroSectionProps) {
               </p>
             </div>
 
-            {/* Stats */}
             <div className="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-border">
               <div>
                 <div className="text-3xl md:text-4xl font-bold text-accent">1+</div>
