@@ -9,7 +9,12 @@ interface Particle {
   opacity: number
 }
 
-const PARTICLE_COUNT = 100
+function getParticleCount() {
+  const width = window.innerWidth
+  if (width < 640) return 30
+  if (width < 1024) return 50
+  return 100
+}
 const CONNECTION_DISTANCE = 140
 const MOUSE_RADIUS = 180
 const MOUSE_REPEL_STRENGTH = 0.04
@@ -39,7 +44,7 @@ export function ParticleConstellation() {
     function createParticles() {
       if (!canvas) return
       const particles: Particle[] = []
-      for (let i = 0; i < PARTICLE_COUNT; i++) {
+      for (let i = 0; i < getParticleCount(); i++) {
         particles.push({
           x: Math.random() * canvas.offsetWidth,
           y: Math.random() * canvas.offsetHeight,
