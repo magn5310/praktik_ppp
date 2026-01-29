@@ -165,7 +165,7 @@ export function ParticleConstellation() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 w-full h-full pointer-events-none sm:pointer-events-auto"
+      className="absolute inset-0 w-full h-full pointer-events-none sm:pointer-events-auto"
       style={{ zIndex: 0 }}
     />
   )
