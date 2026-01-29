@@ -13,7 +13,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Foofest",
-    description: "Frontend eksamensprojekt - Festival booking platform",
+    description: "Festival booking platform med React og Next.js",
     url: "https://foofest-forbedringer.vercel.app/",
     image: "/images/foofest.png",
     tags: ["React", "Next.js", "API"],
@@ -41,7 +41,7 @@ const projects: Project[] = [
   },
   {
     title: "Web Eksamen",
-    description: "1. semester eksamensprojekt - Flask backend",
+    description: "Fullstack webapplikation med Flask og MySQL",
     url: "https://magnus00.pythonanywhere.com/",
     image: "/images/wolt-eksamen.png",
     tags: ["Python", "Flask", "MySQL"],

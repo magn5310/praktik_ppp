@@ -40,7 +40,7 @@ export function Header() {
             href="#kontakt"
             className="text-sm text-accent hover:text-accent-hover transition-colors"
           >
-            Ledig til praktik
+            Looking for work!
           </a>
         </div>
       </nav>

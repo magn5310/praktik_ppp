@@ -37,18 +37,19 @@ function App() {
         />
 
         <TextBlock
-          label="Praktik"
+          label="Jobsøgende"
           title="Hvad søger jeg?"
         >
           <p>
-            I min kommende praktik søger jeg muligheden for at koble skolebænken
-            sammen med den virkelige verden. Jeg glæder mig til at opleve hvordan
-            en hverdag og et arbejdsliv kan se ud.
+            Jeg er nyuddannet bachelor i webudvikling med hands-on erfaring fra
+            praktik hos ZeroNorth og et års studiejob hos Accelerace. Nu søger
+            jeg et job, hvor jeg kan bruge min erfaring og fortsætte med at vokse
+            som udvikler.
           </p>
           <p>
-            Det vigtigeste for mig er at lære en hel masse, få mulighed for fordybelse
-            og dygtiggøre mig. Om det er nye eller velkendte ting, er knap så vigtigt,
-            det afgørende er, at jeg får en masse erfaring.
+            Det vigtigste for mig er et sted med godt kollegaskab, hvor jeg kan
+            fordybe mig og dygtiggøre mig. Jeg er åben for både frontend- og
+            fullstack-roller og motiveret for at lære nyt hver dag.
           </p>
         </TextBlock>
 
@@ -63,20 +64,20 @@ function App() {
           title="Hvad har jeg lavet?"
         >
           <p>
-            Jeg har, samtidig med studiet, arbejdet hos Accelerace i lidt over et år.
-            Her har jeg prøvet kræfter med Vue, Laravel og Inertia i et professionelt
-            udviklingsmiljø.
+            Hos ZeroNorth arbejdede jeg som frontend-udvikler i React, hvor jeg
+            blandt andet erstattede styled components med Tailwind CSS og byggede
+            moduler til dataeksport. Samarbejdet i et professionelt udviklerteam
+            gav mig værdifuld erfaring med CI, tests og design meetings.
           </p>
           <p>
-            På webudvikling har jeg arbejdet med Flask i Python samt MySQL, med
-            tilkoblet teori om NoSQL og graph databaser. Derudover har jeg valgt
-            Cybersecurity for Web developers som valgfag samt Development Environments
-            hvor kode kvalitet og automatisering er i fokus.
+            Hos Accelerace arbejdede jeg i over et år med fullstack-udvikling i
+            Laravel, Vue og MySQL. Her løste jeg alt fra bugs og mindre features
+            til opgaver med databasekald og databehandling, og jeg skrev tests
+            for at sikre systemets stabilitet.
           </p>
           <p>
-            Jeg er en teamplayer, der kan lide at samarbejde, men jeg trives også
-            glimrende med selvstændige opgaver. Der findes læring i alle opgaver,
-            store som små.
+            På min bachelor har jeg desuden arbejdet med Flask, Python, cybersecurity
+            og udviklingsmiljøer med fokus på kodekvalitet og automatisering.
           </p>
         </TextBlock>
 

@@ -1,5 +1,43 @@
+import { type IconType } from "react-icons"
+import {
+  SiReact,
+  SiNextdotjs,
+  SiTypescript,
+  SiJavascript,
+  SiVuedotjs,
+  SiAstro,
+  SiHtml5,
+  SiCss3,
+  SiTailwindcss,
+  SiPython,
+  SiFlask,
+  SiLaravel,
+  SiMysql,
+  SiNodedotjs,
+  SiGit,
+  SiFigma,
+} from "react-icons/si"
 import { motion } from "framer-motion"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+
+const skillIcons: Record<string, IconType> = {
+  "React": SiReact,
+  "Next.js": SiNextdotjs,
+  "TypeScript": SiTypescript,
+  "JavaScript": SiJavascript,
+  "Vue": SiVuedotjs,
+  "Astro": SiAstro,
+  "HTML5": SiHtml5,
+  "CSS3": SiCss3,
+  "Tailwind CSS": SiTailwindcss,
+  "Python": SiPython,
+  "Flask": SiFlask,
+  "Laravel": SiLaravel,
+  "MySQL": SiMysql,
+  "Node.js": SiNodedotjs,
+  "Git": SiGit,
+  "Figma": SiFigma,
+}
 
 interface IntroSectionProps {
   imageSrc: string
@@ -46,13 +84,13 @@ export function IntroSection({ imageSrc, imageAlt }: IntroSectionProps) {
             </h2>
             <div className="space-y-6 text-muted text-lg leading-relaxed">
               <p>
-                Mit navn er Magnus, jeg er 23 år og studerer webudvikling på KEA.
-                Jeg elsker at nørde med programmering og kode.
+                Mit navn er Magnus, jeg er 25 år og har en bachelor i webudvikling
+                fra Erhvervsakademi København. Jeg elsker at nørde med programmering og kode.
               </p>
               <p>
-                Som webudvikling-studerende er mit mål at blive fullstack udvikler.
-                Med en baggrund i multimediedesign har jeg solidt kendskab til
-                frontend-teknologier som React, Next.js og Astro.
+                Med erfaring fra både praktik og studiejob er mit mål at arbejde
+                som fullstack udvikler. Jeg har solidt kendskab til frontend-teknologier
+                som React, Next.js og TypeScript samt backend med Laravel og Flask.
               </p>
             </div>
 
@@ -141,11 +179,16 @@ export function SkillsBlock({ label, title, skills }: SkillsBlockProps) {
           {skills.map((skill, index) => (
             <motion.div
               key={skill}
-              className="p-6 border border-border hover:border-accent transition-colors group"
+              className="p-6 border border-border hover:border-accent transition-colors group flex items-center gap-3"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.4, delay: index * 0.05 }}
             >
+              {skillIcons[skill] && (
+                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-accent">
+                  {(() => { const Icon = skillIcons[skill]; return <Icon className="w-5 h-5" />; })()}
+                </span>
+              )}
               <span className="text-foreground group-hover:text-accent transition-colors font-medium">
                 {skill}
               </span>
