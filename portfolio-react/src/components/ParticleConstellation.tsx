@@ -34,11 +34,16 @@ export function ParticleConstellation() {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
+    let canvasW = canvas.offsetWidth
+    let canvasH = canvas.offsetHeight
+
     function resize() {
       if (!canvas) return
       const dpr = window.devicePixelRatio || 1
-      canvas.width = canvas.offsetWidth * dpr
-      canvas.height = canvas.offsetHeight * dpr
+      canvasW = canvas.offsetWidth
+      canvasH = canvas.offsetHeight
+      canvas.width = canvasW * dpr
+      canvas.height = canvasH * dpr
       ctx!.scale(dpr, dpr)
     }
 
@@ -47,8 +52,8 @@ export function ParticleConstellation() {
       const particles: Particle[] = []
       for (let i = 0; i < getParticleCount(); i++) {
         particles.push({
-          x: Math.random() * canvas.offsetWidth,
-          y: Math.random() * canvas.offsetHeight,
+          x: Math.random() * canvasW,
+          y: Math.random() * canvasH,
           vx: (Math.random() - 0.5) * BASE_SPEED,
           vy: (Math.random() - 0.5) * BASE_SPEED,
           radius: Math.random() * 1.5 + 0.5,
@@ -60,8 +65,8 @@ export function ParticleConstellation() {
 
     function animate() {
       if (!canvas || !ctx) return
-      const w = canvas.offsetWidth
-      const h = canvas.offsetHeight
+      const w = canvasW
+      const h = canvasH
       const particles = particlesRef.current
 
       ctx.clearRect(0, 0, w, h)
