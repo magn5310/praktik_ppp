@@ -31,7 +31,7 @@ export function ContactSection() {
 
           <motion.a
             href="mailto:magnusmadsen2000@hotmail.com"
-            className="inline-flex items-center gap-3 text-2xl md:text-3xl font-bold text-foreground hover:text-accent transition-colors group"
+            className="inline-flex items-center gap-3 text-sm xs:text-base sm:text-2xl md:text-3xl font-bold text-foreground hover:text-accent transition-colors group whitespace-nowrap"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.3 }}

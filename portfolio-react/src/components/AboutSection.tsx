@@ -53,7 +53,7 @@ export function IntroSection({ imageSrc, imageAlt }: IntroSectionProps) {
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">
           {/* Image */}
           <motion.div
-            className="relative order-2 lg:order-1"
+            className="relative order-2 lg:order-1 pb-4 pr-4"
             initial={{ opacity: 0, x: -40 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
@@ -64,7 +64,7 @@ export function IntroSection({ imageSrc, imageAlt }: IntroSectionProps) {
                 alt={imageAlt}
                 className="w-full relative aspect-3/4 object-cover grayscale hover:grayscale-0 transition-all duration-700 z-20"
               />
-              
+
               <div className="absolute -bottom-4 -right-4 w-full h-full border border-accent z-10" />
             </div>
           </motion.div>
@@ -185,7 +185,7 @@ export function SkillsBlock({ label, title, skills }: SkillsBlockProps) {
               transition={{ duration: 0.4, delay: index * 0.05 }}
             >
               {skillIcons[skill] && (
-                <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-accent">
+                <span className="opacity-100 lg:opacity-0 lg:group-hover:opacity-100 transition-opacity duration-300 text-accent">
                   {(() => { const Icon = skillIcons[skill]; return <Icon className="w-5 h-5" />; })()}
                 </span>
               )}
