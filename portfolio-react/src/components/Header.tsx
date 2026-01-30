@@ -13,14 +13,7 @@ export function Header() {
   }, [])
 
   return (
-    <motion.header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : ""
-      }`}
-      initial={{ y: -100 }}
-      animate={{ y: 0 }}
-      transition={{ duration: 0.6 }}
-    >
+    <motion.header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? "bg-background/90 backdrop-blur-md border-b border-border" : ""}`} initial={{ y: -100 }} animate={{ y: 0 }} transition={{ duration: 0.6 }}>
       <nav className="container mx-auto px-6 md:px-12 py-6">
         <div className="flex items-center justify-between">
           <a href="#" className="text-foreground font-medium tracking-wide hover:text-accent transition-colors">
@@ -36,14 +29,12 @@ export function Header() {
             </a>
           </div>
 
-          <a
-            href="#kontakt"
-            className="text-sm text-accent hover:text-accent-hover transition-colors"
-          >
+          <a href="#kontakt" className="text-sm uppercase text-accent hover:text-accent-hover transition-colors">
+            <span className="bg-accent rounded-full h-2 w-2 inline-block animate-pulse mr-1"></span>
             Looking for work!
           </a>
         </div>
       </nav>
     </motion.header>
-  )
+  );
 }

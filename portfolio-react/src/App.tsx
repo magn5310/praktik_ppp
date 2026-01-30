@@ -1,3 +1,4 @@
+import { Toaster } from "sonner"
 import { Header } from "./components/Header"
 import { Hero } from "./components/Hero"
 import { IntroSection, TextBlock, SkillsBlock } from "./components/AboutSection"
@@ -26,6 +27,16 @@ const skills = [
 function App() {
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
+      <Toaster
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            background: "#151515",
+            color: "#C9A227",
+            border: "1px solid #222222",
+          },
+        }}
+      />
       <Header />
 
       <main>
