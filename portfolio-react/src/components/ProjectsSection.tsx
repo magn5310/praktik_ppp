@@ -30,7 +30,7 @@ const projects: Project[] = [
   {
     title: "Omada Wine & Deli",
     description: "Restaurant website med booking system",
-    url: "https://team12-omada.netlify.app/",
+    url: "https://omada-mrmadsen.netlify.app/",
     image: "/images/omada.png",
     tags: ["Astro", "Tailwind", "Supabase"],
   },
@@ -49,7 +49,7 @@ const projects: Project[] = [
     tags: ["Python", "Flask", "MySQL"],
     outOfOrder: true,
   },
-]
+];
 
 export function ProjectsSection() {
   const { ref, isInView } = useScrollAnimation()
