@@ -15,7 +15,7 @@ interface Project {
 const projects: Project[] = [
   {
     title: "Foofest (Projektets billeder er ikke tilgængelige)",
-    description: "Festival booking platform med React og Next.js",
+    description: "Festival booking platform koncept med React og Next.js",
     url: "https://foofest-forbedringer.vercel.app/",
     image: "/images/foofest.png",
     tags: ["React", "Next.js", "Superbase", "API"],
@@ -29,7 +29,7 @@ const projects: Project[] = [
   },
   {
     title: "Omada Wine & Deli",
-    description: "Restaurant website med booking system",
+    description: "Wine & deli website",
     url: "https://omada-mrmadsen.netlify.app/",
     image: "/images/omada.png",
     tags: ["Astro", "Tailwind", "Supabase"],
