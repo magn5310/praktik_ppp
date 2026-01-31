@@ -14,7 +14,7 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Foofest",
+    title: "Foofest (Projektets billeder er ikke tilgængelige)",
     description: "Festival booking platform med React og Next.js",
     url: "https://foofest-forbedringer.vercel.app/",
     image: "/images/foofest.png",
