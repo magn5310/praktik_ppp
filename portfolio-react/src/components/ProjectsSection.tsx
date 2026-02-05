@@ -2,10 +2,13 @@ import { motion } from "framer-motion"
 import { toast } from "sonner"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 import { ArrowUpRight } from "lucide-react"
+import { useLanguage } from "@/i18n/LanguageContext"
+import type { TranslationKey } from "@/i18n/translations"
 
 interface Project {
-  title: string
-  description: string
+  titleKey: TranslationKey
+  descriptionKey: TranslationKey
+  subDescriptionKey?: TranslationKey
   url: string
   image: string
   tags: string[]
@@ -14,36 +17,45 @@ interface Project {
 
 const projects: Project[] = [
   {
-    title: "Foofest (Projektets billeder er ikke tilgængelige)",
-    description: "Festival booking platform koncept med React og Next.js",
-    url: "https://foofest-forbedringer.vercel.app/",
-    image: "/images/foofest.png",
-    tags: ["React", "Next.js", "Superbase", "API"],
+    titleKey: "projects.blDashboard.title",
+    descriptionKey: "projects.blDashboard.description",
+    subDescriptionKey: "projects.blDashboard.subDescription",
+    url: "https://bl-dashboard-three.vercel.app/",
+    image: "/images/bl-dashboard.png",
+    tags: ["Next.js", "MySQL", "Auth0"],
   },
   {
-    title: "Cehofski",
-    description: "Interaktivt website med moderne design",
+    titleKey: "projects.foofest.title",
+    descriptionKey: "projects.foofest.description",
+    subDescriptionKey: "projects.foofest.subDescription",
+    url: "https://foofest-forbedringer.vercel.app/",
+    image: "/images/foofest.png",
+    tags: ["Next.js", "Supabase", "API"],
+  },
+  {
+    titleKey: "projects.cehofski.title",
+    descriptionKey: "projects.cehofski.description",
     url: "https://beamish-moonbeam-46fcdc.netlify.app/",
     image: "/images/cehofski.png",
     tags: ["JavaScript", "CSS", "Animation"],
   },
   {
-    title: "Omada Wine & Deli",
-    description: "Wine & deli website",
+    titleKey: "projects.omada.title",
+    descriptionKey: "projects.omada.description",
     url: "https://omada-mrmadsen.netlify.app/",
     image: "/images/omada.png",
     tags: ["Astro", "Tailwind", "Supabase"],
   },
   {
-    title: "Sakura Festival",
-    description: "Event website med japansk æstetik",
+    titleKey: "projects.sakura.title",
+    descriptionKey: "projects.sakura.description",
     url: "https://loquacious-squirrel-76a1bd.netlify.app/",
     image: "/images/sakura.png",
     tags: ["Astro", "CSS", "JavaScript"],
   },
   {
-    title: "Web Eksamen",
-    description: "Fullstack webapplikation med Flask og MySQL",
+    titleKey: "projects.webEksamen.title",
+    descriptionKey: "projects.webEksamen.description",
     url: "https://magnus00.pythonanywhere.com/",
     image: "/images/wolt-eksamen.png",
     tags: ["Python", "Flask", "MySQL"],
@@ -53,6 +65,7 @@ const projects: Project[] = [
 
 export function ProjectsSection() {
   const { ref, isInView } = useScrollAnimation()
+  const { t } = useLanguage()
 
   return (
     <section ref={ref} className="py-24 md:py-32 border-t border-border" id="projekter">
@@ -64,10 +77,10 @@ export function ProjectsSection() {
           className="mb-16"
         >
           <span className="text-accent text-sm tracking-[0.3em] uppercase mb-4 block">
-            Portfolio
+            {t("projects.label")}
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight max-w-2xl">
-            Udvalgte projekter
+            {t("projects.title")}
           </h2>
         </motion.div>
 
@@ -77,7 +90,7 @@ export function ProjectsSection() {
 
             return (
               <MotionTag
-                key={project.title}
+                key={project.titleKey}
                 {...(!project.outOfOrder && {
                   href: project.url,
                   target: "_blank",
@@ -86,9 +99,7 @@ export function ProjectsSection() {
                 onClick={
                   project.outOfOrder
                     ? () =>
-                        toast.error(
-                          "This project is currently out of order and cannot be accessed.",
-                        )
+                        toast.error(t("projects.outOfOrderToast"))
                     : undefined
                 }
                 initial={{ opacity: 0, y: 40 }}
@@ -101,14 +112,14 @@ export function ProjectsSection() {
                   <div className="relative aspect-video overflow-hidden">
                     <img
                       src={project.image}
-                      alt={project.title}
+                      alt={t(project.titleKey)}
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                     />
 
                     {project.outOfOrder && (
                       <div className="absolute inset-0 bg-black/60 flex items-center justify-center">
                         <span className="bg-accent text-white font-bold text-lg px-8 py-2 -rotate-12 shadow-lg uppercase tracking-wider">
-                          Out of Order
+                          {t("projects.outOfOrder")}
                         </span>
                       </div>
                     )}
@@ -116,7 +127,7 @@ export function ProjectsSection() {
                     {!project.outOfOrder && (
                       <div className="absolute inset-0 bg-background/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                         <span className="flex items-center gap-2 text-foreground font-medium">
-                          Se projekt <ArrowUpRight className="w-4 h-4" />
+                          {t("projects.viewProject")} <ArrowUpRight className="w-4 h-4" />
                         </span>
                       </div>
                     )}
@@ -125,13 +136,18 @@ export function ProjectsSection() {
                   <div className="p-6">
                     <div className="flex items-start justify-between gap-4 mb-3">
                       <h3 className="text-xl font-bold group-hover:text-accent transition-colors">
-                        {project.title}
+                        {t(project.titleKey)}
                       </h3>
                       <ArrowUpRight className="w-5 h-5 text-muted group-hover:text-accent transition-all duration-300 group-hover:translate-x-1 group-hover:-translate-y-1 shrink-0" />
                     </div>
                     <p className="text-muted text-sm mb-4">
-                      {project.description}
+                      {t(project.descriptionKey)}
                     </p>
+                    {project.subDescriptionKey && (
+                      <p className="text-muted text-xs mb-4">
+                        {t(project.subDescriptionKey)}
+                      </p>
+                    )}
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag) => (
                         <span

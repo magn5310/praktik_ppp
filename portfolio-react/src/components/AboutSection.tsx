@@ -19,6 +19,7 @@ import {
 } from "react-icons/si"
 import { motion } from "framer-motion"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
+import { useLanguage } from "@/i18n/LanguageContext"
 
 const skillIcons: Record<string, IconType> = {
   "React": SiReact,
@@ -46,6 +47,7 @@ interface IntroSectionProps {
 
 export function IntroSection({ imageSrc, imageAlt }: IntroSectionProps) {
   const { ref, isInView } = useScrollAnimation()
+  const { t } = useLanguage()
 
   return (
     <section ref={ref} className="py-24 md:py-32 border-t border-border">
@@ -75,35 +77,32 @@ export function IntroSection({ imageSrc, imageAlt }: IntroSectionProps) {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <span className="text-accent text-sm tracking-[0.3em] uppercase mb-4 block">
-              Om mig
+              {t("about.label")}
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-8 leading-tight">
-              Passioneret webudvikler med øje for detaljen
+              {t("about.title")}
             </h2>
             <div className="space-y-6 text-muted text-lg leading-relaxed">
               <p>
-                Mit navn er Magnus, jeg er 25 år og har en bachelor i webudvikling
-                fra Erhvervsakademi København. Jeg elsker at nørde med programmering og kode.
+                {t("about.paragraph1")}
               </p>
               <p>
-                Med erfaring fra både praktik og studiejob er mit mål at arbejde
-                som fullstack udvikler. Jeg har solidt kendskab til frontend-teknologier
-                som React, Next.js og TypeScript samt backend med Laravel og Flask.
+                {t("about.paragraph2")}
               </p>
             </div>
 
             <div className="grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-border">
               <div>
                 <div className="text-3xl md:text-4xl font-bold text-accent">1+</div>
-                <div className="text-sm text-muted mt-1">Års erfaring</div>
+                <div className="text-sm text-muted mt-1">{t("about.yearsExperience")}</div>
               </div>
               <div>
-                <div className="text-3xl md:text-4xl font-bold text-accent">5+</div>
-                <div className="text-sm text-muted mt-1">Projekter</div>
+                <div className="text-3xl md:text-4xl font-bold text-accent">6+</div>
+                <div className="text-sm text-muted mt-1">{t("about.projects")}</div>
               </div>
               <div>
                 <div className="text-3xl md:text-4xl font-bold text-accent">10+</div>
-                <div className="text-sm text-muted mt-1">Teknologier</div>
+                <div className="text-sm text-muted mt-1">{t("about.technologies")}</div>
               </div>
             </div>
           </motion.div>
@@ -167,7 +166,7 @@ export function SkillsBlock({ label, title, skills }: SkillsBlockProps) {
           <span className="text-accent text-sm tracking-[0.3em] uppercase mb-4 block">
             {label}
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-16 leading-tight max-w-2xl">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-16 leading-tight max-w-3xl">
             {title}
           </h2>
         </motion.div>

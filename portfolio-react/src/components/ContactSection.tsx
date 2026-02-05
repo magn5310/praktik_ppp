@@ -1,9 +1,11 @@
 import { motion } from "framer-motion"
 import { useScrollAnimation } from "@/hooks/useScrollAnimation"
 import { ArrowUpRight } from "lucide-react"
+import { useLanguage } from "@/i18n/LanguageContext"
 
 export function ContactSection() {
   const { ref, isInView } = useScrollAnimation()
+  const { t } = useLanguage()
 
   return (
     <section ref={ref} className="py-32 md:py-48 border-t border-border" id="kontakt">
@@ -15,18 +17,17 @@ export function ContactSection() {
           transition={{ duration: 0.8 }}
         >
           <span className="text-accent text-sm tracking-[0.3em] uppercase mb-6 block">
-            Lad os tale sammen
+            {t("contact.label")}
           </span>
 
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold mb-8 leading-tight">
-            Klar til at starte
+            {t("contact.title1")}
             <br />
-            <span className="text-gradient">et samarbejde?</span>
+            <span className="text-gradient">{t("contact.title2")}</span>
           </h2>
 
           <p className="text-muted text-lg md:text-xl mb-12 max-w-2xl mx-auto">
-            Jeg søger job som webudvikler og er klar til at bidrage med engagement,
-            nysgerrighed og teknisk kunnen.
+            {t("contact.paragraph")}
           </p>
 
           <motion.a

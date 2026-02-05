@@ -1,8 +1,11 @@
 import { motion } from "framer-motion"
 import { ParticleConstellation } from "./ParticleConstellation"
 import { TextScramble } from "./TextScramble"
+import { useLanguage } from "@/i18n/LanguageContext"
 
 export function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section className="min-h-screen flex flex-col justify-center relative overflow-hidden">
       <ParticleConstellation />
@@ -18,7 +21,7 @@ export function Hero() {
           className="mb-8"
         >
           <span className="text-accent text-sm md:text-base tracking-[0.3em] uppercase font-medium">
-            <TextScramble text="Webudvikler" delay={200} duration={800} />
+            <TextScramble text={t("hero.title")} delay={200} duration={800} />
           </span>
         </motion.div>
 
@@ -43,13 +46,13 @@ export function Hero() {
             href="#kontakt"
             className="px-8 py-4 bg-accent text-background font-medium hover:bg-accent-hover transition-colors"
           >
-            Kontakt mig
+            {t("hero.contactMe")}
           </a>
           <a
             href="#projekter"
             className="px-8 py-4 border border-border text-foreground hover:border-accent hover:text-accent transition-colors"
           >
-            Se projekter
+            {t("hero.viewProjects")}
           </a>
         </motion.div>
       </div>

@@ -4,6 +4,7 @@ import { Hero } from "./components/Hero"
 import { IntroSection, TextBlock, SkillsBlock } from "./components/AboutSection"
 import { ProjectsSection } from "./components/ProjectsSection"
 import { ContactSection } from "./components/ContactSection"
+import { useLanguage } from "./i18n/LanguageContext"
 
 const skills = [
   "React",
@@ -25,6 +26,8 @@ const skills = [
 ]
 
 function App() {
+  const { t } = useLanguage()
+
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
       <Toaster
@@ -48,56 +51,35 @@ function App() {
         />
 
         <TextBlock
-          label="Jobsøgende"
-          title="Hvad søger jeg?"
+          label={t("jobSeeking.label")}
+          title={t("jobSeeking.title")}
         >
           <p>
-            Jeg er nyuddannet bachelor i webudvikling med hands-on erfaring fra
-            praktik hos ZeroNorth og et års studiejob hos Accelerace. Nu søger
-            jeg et job, hvor jeg kan bruge min erfaring og fortsætte med at vokse
-            som udvikler.
+            {t("jobSeeking.paragraph1")}
           </p>
           <p>
-            Det vigtigste for mig er et sted med godt kollegaskab, hvor jeg kan
-            fordybe mig og dygtiggøre mig. Jeg er åben for både frontend- og
-            fullstack-roller og motiveret for at lære nyt hver dag.
+            {t("jobSeeking.paragraph2")}
           </p>
         </TextBlock>
 
         <SkillsBlock
-          label="Teknologier"
-          title="Værktøjer jeg arbejder med"
+          label={t("skills.label")}
+          title={t("skills.title")}
           skills={skills}
         />
 
         <TextBlock
-          label="Erfaring"
-          title="Hvad har jeg lavet?"
+          label={t("experience.label")}
+          title={t("experience.title")}
         >
           <p>
-            I min 10 ugers praktik hos ZeroNorth arbejdede jeg som
-            frontend-udvikler i React, hvor jeg blandt andet erstattede styled
-            components med Tailwind CSS og byggede et modul til eksport af data
-            til Excel. Det vigtigste udbytte var erfaringen med at indgå i et
-            professionelt udviklerteam — fra daglig kommunikation og samarbejde
-            til gode practices omkring CI, tests og design meetings.
+            {t("experience.paragraph1")}
           </p>
           <p>
-            Hos Accelerace arbejdede jeg i over et år som fullstack-udvikler i
-            Laravel, Vue og MySQL. Via et fælles Jira board løste jeg opgaver i
-            alle afskygninger — fra bugs og mindre features til databasekald og
-            databehandling. Da jeg startede, havde jeg primært
-            frontend-erfaring, men gennem dette år lærte jeg hvordan backend
-            kommunikerer med både database og frontend. Jeg skrev desuden tests
-            for at sikre systemets stabilitet.
+            {t("experience.paragraph2")}
           </p>
           <p>
-            På min bachelor fra KEA har jeg blandt andet arbejdet med responsive
-            webapplikationer i React og Next.js, dataudveksling mellem frontend
-            og backend med autentifikation og validering, relationelle
-            SQL-databaser og dokumentbaserede NoSQL-databaser, versionsstyring
-            med Git og grundlæggende CI/CD samt sikring af webapplikationer med
-            fokus på OWASP Top 10 og cybersecurity.
+            {t("experience.paragraph3")}
           </p>
         </TextBlock>
 
@@ -112,7 +94,7 @@ function App() {
             &copy; {new Date().getFullYear()} Magnus Robert Madsen
           </span>
           <span className="text-sm text-muted">
-            Designet & udviklet med React + Tailwind
+            {t("footer.designedWith")}
           </span>
         </div>
       </footer>
