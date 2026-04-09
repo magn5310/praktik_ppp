@@ -4,7 +4,10 @@ import { Hero } from "./components/Hero"
 import { IntroSection, TextBlock, SkillsBlock } from "./components/AboutSection"
 import { ProjectsSection } from "./components/ProjectsSection"
 import { ContactSection } from "./components/ContactSection"
+import { AdminDashboard } from "./components/admin/AdminDashboard"
 import { useLanguage } from "./i18n/LanguageContext"
+import { useHashRoute } from "./hooks/useHashRoute"
+import { useVisitTracker } from "./hooks/useVisitTracker"
 
 const skills = [
   "React",
@@ -27,6 +30,26 @@ const skills = [
 
 function App() {
   const { t } = useLanguage()
+  const route = useHashRoute()
+  useVisitTracker()
+
+  if (route === "/admin") {
+    return (
+      <>
+        <Toaster
+          position="bottom-right"
+          toastOptions={{
+            style: {
+              background: "#151515",
+              color: "#C9A227",
+              border: "1px solid #222222",
+            },
+          }}
+        />
+        <AdminDashboard />
+      </>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-background overflow-x-hidden">
